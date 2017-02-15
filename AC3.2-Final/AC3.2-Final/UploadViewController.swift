@@ -63,20 +63,24 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                     else {
                         print(reference)
                         let alert = UIAlertController(title: "Photo uploaded!", message: nil, preferredStyle: UIAlertControllerStyle.alert)
-                        let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+                        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let svc = storyboard.instantiateViewController(withIdentifier: "TabBar")
+                            self.present(svc, animated: true, completion: nil)
+                        })
                         alert.addAction(ok)
                         self.present(alert, animated: true, completion: nil)
                     }
                 })
             }
         }
-        self.dismiss(animated: true, completion: nil)
     }
     
     func openLibrary() {
         picker.delegate = self
         picker.sourceType = .photoLibrary
         picker.mediaTypes = [String(kUTTypeImage)]
+        picker.allowsEditing = true
         present(picker, animated: true, completion: nil)
     }
     
@@ -85,7 +89,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
             print("Error choosing image to display")
             return
         }
-        uploadImage.contentMode = .scaleAspectFill
+        uploadImage.contentMode = .scaleToFill
         uploadImage.image = image
         dismiss(animated: true, completion: nil)
     }

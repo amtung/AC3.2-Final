@@ -25,33 +25,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         emailField.delegate = self
         passwordField.delegate = self
         
-        let _ = FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
-            self.updateInterface()
-        })
     }
     
     // MARK: - Methods and Actions
     
-    func updateInterface() {
-        if let _ = FIRAuth.auth()?.currentUser {
-            print("Got a user")
-        } else {
-            loginButton.setTitle("Sign In", for: .normal)
-        }
-    }
-    
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        if FIRAuth.auth()?.currentUser != nil {
-            do {
-                try FIRAuth.auth()?.signOut()
-            } catch {
-                print("Error loggin in: \(error.localizedDescription)")
-            }
-        }
-        else if let email = emailField.text,
+        if let email = emailField.text,
             let password = passwordField.text {
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
- 
+                
                 if user != nil {
                     let alert = UIAlertController(title: "Login Successful.", message: nil, preferredStyle: UIAlertControllerStyle.alert)
                     let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) in
