@@ -7,10 +7,12 @@
 //
 
 import UIKit
-import SnapKit
 
 class MainFeedTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var feedImage: UIImageView!
+    @IBOutlet weak var commentLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 

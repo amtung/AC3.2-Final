@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pd8-Ah-wdQ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -86,46 +87,56 @@
                         <outlet property="loginButton" destination="ddC-5D-g4N" id="ydz-Nc-kma"/>
                         <outlet property="passwordField" destination="hJ8-gF-7LW" id="5ZN-ts-eIS"/>
                         <outlet property="registerButton" destination="lgH-3a-2qh" id="aCJ-y3-iea"/>
-                        <segue destination="pd8-Ah-wdQ" kind="show" identifier="tabBarSegue" id="AVb-NJ-F7I"/>
+                        <segue destination="pd8-Ah-wdQ" kind="show" identifier="segue" id="mIb-ED-wVT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-743" y="674"/>
+            <point key="canvasLocation" x="-742" y="674"/>
         </scene>
         <!--Main Feed Table View Controller-->
         <scene sceneID="1SE-dE-Y1W">
             <objects>
-                <tableViewController id="fFA-ru-6yQ" customClass="MainFeedTableViewController" customModule="AC3_2_Final" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="389" sectionHeaderHeight="28" sectionFooterHeight="28" id="fyq-Up-6a7">
+                <tableViewController storyboardIdentifier="MainFeed" id="fFA-ru-6yQ" customClass="MainFeedTableViewController" customModule="AC3_2_Final" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="467" sectionHeaderHeight="28" sectionFooterHeight="28" id="fyq-Up-6a7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="389" id="4eI-ui-qLf" customClass="MainFeedTableViewCell" customModule="AC3_2_Final" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="389"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="467" id="4eI-ui-qLf" customClass="MainFeedTableViewCell" customModule="AC3_2_Final" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="467"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4eI-ui-qLf" id="bcj-3m-gLJ">
-                                    <frame key="frameInset" width="375" height="388"/>
+                                    <frame key="frameInset" width="375" height="466"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I9W-8g-fPb">
-                                            <frame key="frameInset" minX="8" minY="8" width="359" height="273"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I9W-8g-fPb">
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="I9W-8g-fPb" secondAttribute="height" multiplier="1:1" id="eWm-0N-Fxe"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3Q-Ja-z0S">
-                                            <frame key="frameInset" minX="8" minY="307" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYX-h7-IZa">
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="I9W-8g-fPb" firstAttribute="top" secondItem="bcj-3m-gLJ" secondAttribute="topMargin" id="fji-CQ-aeQ"/>
-                                        <constraint firstItem="I9W-8g-fPb" firstAttribute="leading" secondItem="bcj-3m-gLJ" secondAttribute="leadingMargin" id="khu-BW-aaU"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="I9W-8g-fPb" secondAttribute="trailing" id="lLi-aS-D6S"/>
+                                        <constraint firstItem="iYX-h7-IZa" firstAttribute="top" secondItem="I9W-8g-fPb" secondAttribute="bottom" id="3A9-fT-v9R"/>
+                                        <constraint firstItem="iYX-h7-IZa" firstAttribute="leading" secondItem="bcj-3m-gLJ" secondAttribute="leadingMargin" id="9mv-qo-B4r"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="iYX-h7-IZa" secondAttribute="trailing" id="Roa-Gd-bpG"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="iYX-h7-IZa" secondAttribute="bottom" id="csw-ac-xun"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstItem="I9W-8g-fPb" firstAttribute="leading" secondItem="4eI-ui-qLf" secondAttribute="leading" id="NWx-Ic-KUu"/>
+                                    <constraint firstItem="I9W-8g-fPb" firstAttribute="top" secondItem="4eI-ui-qLf" secondAttribute="top" id="bvj-i1-2wP"/>
+                                    <constraint firstAttribute="trailing" secondItem="I9W-8g-fPb" secondAttribute="trailing" id="ryu-cf-Etn"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="commentLabel" destination="iYX-h7-IZa" id="LQB-S1-IYu"/>
+                                    <outlet property="feedImage" destination="I9W-8g-fPb" id="L0Z-dd-hSc"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -142,7 +153,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="hCJ-UT-8ta">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VzC-XW-R8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="TabBar" id="pd8-Ah-wdQ" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="cMy-5P-V29"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="YVq-c7-lca">
@@ -155,13 +165,14 @@
                         <segue destination="rqB-I2-gPZ" kind="relationship" relationship="viewControllers" id="czq-QH-TR1"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VzC-XW-R8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="143" y="675"/>
         </scene>
         <!--Upload-->
         <scene sceneID="Sia-b2-7yO">
             <objects>
-                <viewController id="rqB-I2-gPZ" sceneMemberID="viewController">
+                <viewController id="rqB-I2-gPZ" customClass="UploadViewController" customModule="AC3_2_Final" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JbO-IK-dTZ"/>
                         <viewControllerLayoutGuide type="bottom" id="eC0-uY-Zmt"/>
@@ -169,22 +180,65 @@
                     <view key="view" contentMode="scaleToFill" id="KAf-bf-Wuw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera_icon" translatesAutoresizingMaskIntoConstraints="NO" id="jRy-TL-Rym">
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jRy-TL-Rym" secondAttribute="height" multiplier="1:1" id="wzq-wH-kz5"/>
+                                </constraints>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvl-0L-8he">
+                                <items>
+                                    <navigationItem title="Unit6Final-staGram" id="ctv-jk-U7u">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="Qwp-2u-Fsk">
+                                            <connections>
+                                                <action selector="doneButtonTapped:" destination="rqB-I2-gPZ" id="tRH-JA-hgr"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Add a description..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6rn-Xa-JHS">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="Tc1-wO-SvP"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jRy-TL-Rym" firstAttribute="top" secondItem="wvl-0L-8he" secondAttribute="bottom" id="4Fi-UC-Bvc"/>
+                            <constraint firstItem="jRy-TL-Rym" firstAttribute="leading" secondItem="KAf-bf-Wuw" secondAttribute="leading" id="CGf-hP-KH5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6rn-Xa-JHS" secondAttribute="trailing" id="Cpo-rR-HoQ"/>
+                            <constraint firstItem="6rn-Xa-JHS" firstAttribute="top" secondItem="jRy-TL-Rym" secondAttribute="bottom" constant="15" id="F5H-7f-kNb"/>
+                            <constraint firstItem="wvl-0L-8he" firstAttribute="leading" secondItem="KAf-bf-Wuw" secondAttribute="leading" id="LAE-mD-fsA"/>
+                            <constraint firstItem="6rn-Xa-JHS" firstAttribute="leading" secondItem="KAf-bf-Wuw" secondAttribute="leadingMargin" id="Pyc-fh-hap"/>
+                            <constraint firstAttribute="trailing" secondItem="wvl-0L-8he" secondAttribute="trailing" id="h7l-lB-K56"/>
+                            <constraint firstAttribute="trailing" secondItem="jRy-TL-Rym" secondAttribute="trailing" id="rtZ-Qg-Rd8"/>
+                            <constraint firstItem="eC0-uY-Zmt" firstAttribute="top" secondItem="6rn-Xa-JHS" secondAttribute="bottom" constant="15" id="ybd-5g-RXV"/>
+                            <constraint firstItem="wvl-0L-8he" firstAttribute="top" secondItem="KAf-bf-Wuw" secondAttribute="top" constant="10" id="zYh-Bh-UJX"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" image="upload" selectedImage="upload" id="7L8-98-dU6">
-                        <inset key="imageInsets" minX="3" minY="7" maxX="3" maxY="0.0"/>
+                        <inset key="imageInsets" minX="0.0" minY="2" maxX="0.0" maxY="-1"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="uploadComment" destination="6rn-Xa-JHS" id="KSn-Ex-eHI"/>
+                        <outlet property="uploadImage" destination="jRy-TL-Rym" id="KNG-1P-e44"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jEt-xy-cbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1097" y="1019"/>
+            <point key="canvasLocation" x="1096.8" y="1018.7406296851575"/>
         </scene>
         <!--Feed-->
         <scene sceneID="U2C-uf-Xug">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oJX-dN-6f0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Feed" image="chickenleg" selectedImage="chickenleg" id="0wE-ct-aDh">
-                        <inset key="imageInsets" minX="15" minY="14" maxX="8" maxY="9"/>
+                        <inset key="imageInsets" minX="14" minY="17" maxX="12" maxY="11"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vpa-9Q-IWZ">
@@ -202,8 +256,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chickenleg" width="75" height="76"/>
+        <image name="camera_icon" width="60" height="55"/>
+        <image name="chickenleg" width="24" height="25"/>
         <image name="meatly_logo" width="171" height="152"/>
-        <image name="upload" width="44" height="44"/>
+        <image name="upload" width="25" height="25"/>
     </resources>
 </document>

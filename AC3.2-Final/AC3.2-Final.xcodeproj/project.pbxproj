@@ -17,6 +17,8 @@
 		9C9D62881E54B20B00C6F02E /* MainFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D62871E54B20B00C6F02E /* MainFeedTableViewCell.swift */; };
 		9C9D628A1E54B22A00C6F02E /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D62891E54B22A00C6F02E /* UploadViewController.swift */; };
 		9C9D628C1E54B5D700C6F02E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D628B1E54B5D700C6F02E /* LoginViewController.swift */; };
+		9CE431FD1E54DED6004ADA69 /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE431FC1E54DED6004ADA69 /* APIRequestManager.swift */; };
+		9CE432001E54E2CE004ADA69 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE431FF1E54E2CE004ADA69 /* Feed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		9C9D62891E54B22A00C6F02E /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		9C9D628B1E54B5D700C6F02E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9CB6E23D1E54BE4100FE1EEB /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		9CE431FC1E54DED6004ADA69 /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRequestManager.swift; path = ../../../../../Documents/MyProjects/BareBonesFirebase/BareBonesFirebase/APIRequestManager.swift; sourceTree = "<group>"; };
+		9CE431FF1E54E2CE004ADA69 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		BFA81E3A843E8FCC07FEEE67 /* Pods_AC3_2_Final.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AC3_2_Final.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				1EA112FE1E53C0B1004B66E3 /* AppDelegate.swift */,
+				9CE432011E54E2D2004ADA69 /* Model */,
+				9CE431FE1E54DEDA004ADA69 /* APIRequestManager */,
 				9C9D62841E54B16C00C6F02E /* VC */,
 				9CE431FB1E54C7A0004ADA69 /* UI */,
 				9CE431FA1E54C79B004ADA69 /* Helper */,
@@ -124,6 +130,22 @@
 				1EA113071E53C0B1004B66E3 /* LaunchScreen.storyboard */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		9CE431FE1E54DEDA004ADA69 /* APIRequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				9CE431FC1E54DED6004ADA69 /* APIRequestManager.swift */,
+			);
+			name = APIRequestManager;
+			sourceTree = "<group>";
+		};
+		9CE432011E54E2D2004ADA69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CE431FF1E54E2CE004ADA69 /* Feed.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +273,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CE431FD1E54DED6004ADA69 /* APIRequestManager.swift in Sources */,
 				9C9D628A1E54B22A00C6F02E /* UploadViewController.swift in Sources */,
 				9C9D62861E54B1F700C6F02E /* MainFeedTableViewController.swift in Sources */,
+				9CE432001E54E2CE004ADA69 /* Feed.swift in Sources */,
 				9C9D62881E54B20B00C6F02E /* MainFeedTableViewCell.swift in Sources */,
 				9C9D628C1E54B5D700C6F02E /* LoginViewController.swift in Sources */,
 				1EA112FF1E53C0B1004B66E3 /* AppDelegate.swift in Sources */,

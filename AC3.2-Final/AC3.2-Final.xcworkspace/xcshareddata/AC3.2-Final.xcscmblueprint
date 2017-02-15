@@ -4,11 +4,13 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "431A0B247C46561443C0749EB18E7550613D167F" : 9223372036854775807,
     "434FCB2E9EDBC5956B7A19A1D95538C97939669B" : 9223372036854775807,
     "3CCF31241C04A46A70B2ED63F3F9B754376D6710" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "23E9861D-E5D9-4B91-91A5-757885B7489E",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "431A0B247C46561443C0749EB18E7550613D167F" : "..\/..\/Documents\/MyProjects\/BareBonesFirebase",
     "434FCB2E9EDBC5956B7A19A1D95538C97939669B" : "AC3.2-Final\/",
     "3CCF31241C04A46A70B2ED63F3F9B754376D6710" : ""
   },
@@ -20,6 +22,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/amtung\/AC3.2.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3CCF31241C04A46A70B2ED63F3F9B754376D6710"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/amtung\/BareBonesFirebase.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "431A0B247C46561443C0749EB18E7550613D167F"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/amtung\/AC3.2-Final.git",
