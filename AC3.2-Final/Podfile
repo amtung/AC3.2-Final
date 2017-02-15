@@ -9,5 +9,5 @@ target 'AC3.2-Final' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
-  pod 'SnapKit'
+  pod 'SnapKit' 
 end
