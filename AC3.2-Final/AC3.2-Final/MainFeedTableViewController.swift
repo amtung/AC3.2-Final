@@ -7,46 +7,76 @@
 //
 
 import UIKit
+import FirebaseStorage
+import FirebaseDatabase
+import FirebaseAuth
 
 class MainFeedTableViewController: UITableViewController {
+    
+    var databaseRef: FIRDatabaseReference!
+    var feeds = [Feed]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.databaseRef = FIRDatabase.database().reference().child("posts")
+        tableView.estimatedRowHeight = 300
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadFeed()
+    }
+    
+    func loadFeed() {
+        databaseRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            var newFeed = [Feed]()
+            
+            for child in snapshot.children {
+//                dump(child)
+                if let snap = child as? FIRDataSnapshot,
+                let valueDict = snap.value as? [String:String] {
+                    let feed = Feed(key: snap.key, uid: valueDict["uid"] ?? "", comment: valueDict["comment"] ?? "")
+                    newFeed.append(feed)
+                }
+            }
+            self.feeds = newFeed
+            self.tableView.reloadData()
+        })
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return feeds.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! MainFeedTableViewCell
 
-        // Configure the cell...
-
+        let feed = feeds[indexPath.row]
+        cell.commentLabel.text = feed.comment
+        
+        let storage = FIRStorage.storage()
+        let storageRef = storage.reference()
+        let spaceRef = storageRef.child("images/\(feed.key)")
+        
+        spaceRef.data(withMaxSize: 1 * 800 * 800) { (data, error) in
+            if let error = error {
+                print(error)
+            } else {
+                if let data = data {
+                    cell.imageView?.image = UIImage(data: data)
+                    cell.setNeedsLayout()
+                }
+            }
+        }
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
